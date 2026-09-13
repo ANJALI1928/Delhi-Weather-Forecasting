@@ -1,0 +1,12 @@
+.venv/
+__pycache__/
+*.pyc
+outputs/smoke/
+outputs/real-fast/
+outputs/latest/.matplotlib-cache/
+outputs/neural/.matplotlib-cache/
+data/raw/synthetic_smoke.csv
+data/raw/hourly_chunks/
+data/raw/delhi_era5_hourly_2000_2023.csv
+data/raw/delhi_gfs_previous_runs_2022_2023.csv
+outputs/neural-smoke/
