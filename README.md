@@ -40,9 +40,9 @@ and joint forecasts at 1, 3, 6, 12, 24, 72, and 168 hours. It tunes GRU/LSTM hid
 2020–2021, refits the selected networks on all pre-2022 sequences, and evaluates once on 2022–2023.
 
 ```powershell
-& $weatherPython -m pip install -r requirements-neural.txt
-& $weatherPython download_hourly_data.py
-& $weatherPython run_neural_forecasting.py
+python -m pip install -r requirements-neural.txt
+python download_hourly_data.py
+python run_neural_forecasting.py
 ```
 
 Use `--fast` for a one-epoch integration check. Full results are written to `outputs/neural`.
@@ -51,27 +51,26 @@ The operational extension downloads GFS forecasts archived at fixed 1–7 day le
 month/hour bias correction calibrated on 2022 against an untouched 2023 period:
 
 ```powershell
-& $weatherPython download_previous_runs.py
-& $weatherPython run_bias_correction.py
+python download_previous_runs.py
+python run_bias_correction.py
 ```
 
 ## Run
 
-Create an isolated environment using the Codex bundled Python runtime from PowerShell:
+Create and activate an isolated environment from PowerShell:
 
 ```powershell
-$bootstrapPython = "C:\Users\Harshit Mangwani\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe"
-& $bootstrapPython -m venv .venv
-$weatherPython = "$PWD\.venv\Scripts\python.exe"
-& $weatherPython -m pip install -r requirements.txt
-& $weatherPython download_data.py
-& $weatherPython run_forecasting.py
+python -m venv .venv
+. .\.venv\Scripts\Activate.ps1
+python -m pip install -r requirements.txt
+python download_data.py
+python run_forecasting.py
 ```
 
-For a quick dependency-light smoke benchmark using only the bundled NumPy and pandas:
+For a quick dependency-light smoke benchmark:
 
 ```powershell
-& $bootstrapPython run_forecasting.py --fast
+python run_forecasting.py --fast
 ```
 
 Outputs are written to `outputs/latest`. Use `--data` to point to an IMD-derived CSV with the
@@ -82,7 +81,7 @@ canonical columns documented in `data/raw/SOURCE_NOTES.md`.
 The tests use deterministic synthetic data and never report it as a real result:
 
 ```powershell
-& $weatherPython -m unittest discover -s tests -v
+python -m unittest discover -s tests -v
 ```
 
 The tests use Python's standard-library test runner and require no additional test dependency.
