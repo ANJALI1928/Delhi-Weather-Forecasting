@@ -1,0 +1,5 @@
+model,validation_scaled_mae,architecture,hidden_size,layers,dropout
+lstm_h64_l1,0.15001187469419194,lstm,64,1,0.0
+gru_h64_l1,0.15328737286572958,gru,64,1,0.0
+lstm_h32_l1,0.1656022694229421,lstm,32,1,0.0
+gru_h32_l1,0.16626077890396118,gru,32,1,0.0

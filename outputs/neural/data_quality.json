@@ -1,0 +1,19 @@
+{
+  "rows": 210384,
+  "first_timestamp": "2000-01-01 00:00:00",
+  "last_timestamp": "2023-12-31 23:00:00",
+  "inserted_missing_hours": 0,
+  "missing_before_imputation": {
+    "temperature": 0,
+    "relative_humidity": 0,
+    "dew_point": 0,
+    "surface_pressure": 0,
+    "precipitation": 0,
+    "cloud_cover": 0,
+    "wind_speed": 0,
+    "wind_direction": 0,
+    "shortwave_radiation": 0
+  },
+  "remaining_missing_cells": 0,
+  "source": "open-meteo-era5"
+}

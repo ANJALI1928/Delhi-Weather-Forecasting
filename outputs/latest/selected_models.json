@@ -1,0 +1,102 @@
+{
+  "models": {
+    "seasonal_naive_365": {},
+    "climatology": {
+      "window": 15
+    },
+    "harmonic_ridge": {
+      "alpha": 0.1,
+      "fourier_order": 6,
+      "lags": [],
+      "windows": []
+    },
+    "autoregressive_ridge": {
+      "alpha": 1.0,
+      "fourier_order": 4,
+      "lags": [
+        0,
+        1,
+        2,
+        3,
+        6,
+        13,
+        29
+      ],
+      "windows": [
+        3,
+        7,
+        14,
+        30
+      ]
+    },
+    "random_forest": {
+      "fourier_order": 4,
+      "lags": [
+        0,
+        1,
+        2,
+        3,
+        6,
+        13,
+        29,
+        364
+      ],
+      "windows": [
+        3,
+        7,
+        14,
+        30
+      ],
+      "n_estimators": 300,
+      "max_depth": 12,
+      "min_samples_leaf": 5,
+      "max_features": 0.8
+    },
+    "hist_gradient_boosting": {
+      "fourier_order": 4,
+      "lags": [
+        0,
+        1,
+        2,
+        3,
+        6,
+        13,
+        29,
+        364
+      ],
+      "windows": [
+        3,
+        7,
+        14,
+        30
+      ],
+      "learning_rate": 0.08,
+      "max_iter": 300,
+      "max_leaf_nodes": 31,
+      "l2_regularization": 0.1
+    },
+    "arima_fourier": {
+      "order": [
+        2,
+        1,
+        1
+      ],
+      "fourier_order": 4
+    }
+  },
+  "ensemble_members": [
+    "autoregressive_ridge",
+    "arima_fourier",
+    "harmonic_ridge"
+  ],
+  "cv_origins": [
+    "2020-12-31",
+    "2021-04-12",
+    "2021-07-24",
+    "2021-11-03",
+    "2022-02-13",
+    "2022-05-26",
+    "2022-09-06",
+    "2022-12-17"
+  ]
+}

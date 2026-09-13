@@ -1,0 +1,26 @@
+{
+  "rows_raw": 1826,
+  "rows_daily_grid": 1826,
+  "date_min": "2019-01-01",
+  "date_max": "2023-12-31",
+  "invalid_dates": 0,
+  "duplicate_dates_removed": 0,
+  "missing_dates_inserted": 0,
+  "missing_values_before_imputation": {
+    "temperature_mean": 0,
+    "temperature_min": 0,
+    "temperature_max": 0,
+    "precipitation_sum": 0,
+    "wind_speed_mean": 0,
+    "shortwave_radiation_sum": 0,
+    "latitude": 0,
+    "longitude": 0
+  },
+  "physically_implausible_values_removed": {
+    "temperature_mean": 0,
+    "temperature_min": 0,
+    "temperature_max": 0
+  },
+  "min_greater_than_max_violations": 0,
+  "remaining_target_missing": 0
+}
